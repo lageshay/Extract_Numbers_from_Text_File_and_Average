@@ -1,0 +1,20 @@
+# Requests User input. Use the file name ‘mbox-short.txt.’
+fname = input("Enter file name: ")
+#Open the user-entered file
+fh = open(fname)
+#Create count and total for calculating in the below for loop
+count = 0
+total = 0
+spam_confidence = None
+for line in fh:
+    #Tell the program to skip any lines that do no begin with ‘X-DSPAM-Confidence:’
+    if not line.startswith("X-DSPAM-Confidence:"): 
+        continue
+    #When the line begins with ‘X-DSPAM-Confidence:’ slice to only take characters after the 19th character (after X-DSPAM-Confidence:) and strip whitespace
+    else:
+        spam_confidence = line[19:].strip()
+        #Each iteration through the loop, add 1 to count and increase total by the next float number extracted from the line in the file
+        count = count + 1
+        total = total + float(spam_confidence)
+#Calculate the average by dividing the total by count
+print("Average spam confidence:", float(total/count))
