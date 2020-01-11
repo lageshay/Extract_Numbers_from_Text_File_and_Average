@@ -1,0 +1,2 @@
+# Extract_Numbers_from_Text_File_and_Average
+Assignment: Write a program that prompts for a file name, then opens that file and reads through it, looking for lines of the form: “X-DSPAM-Confidence:    0.8475.”Count these lines and extract the floating point values from each. Compute the average of these values. Do not use the sum() function. Data file: http://www.py4e.com/code3/mbox-short.txt. When testing your code, enter mbox-short.txt as the file name. From 'Python for Everybody' University of Michigan course via Coursera.
